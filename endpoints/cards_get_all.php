@@ -1,8 +1,8 @@
 <?php
-// Função de callback para recuperar os cards
-function get_all_cards(WP_REST_Request $request) {
+// Função de callback para recuperar os carrousel
+function get_all_carrousel(WP_REST_Request $request) {
     $args = array(
-        'post_type' => 'cards', // Tipo de post "cards"
+        'post_type' => 'carrousel', // Tipo de post "carrousel"
         'post_status' => 'publish',
         'numberposts' => -1, // Obter todos os posts
     );
@@ -10,7 +10,7 @@ function get_all_cards(WP_REST_Request $request) {
     $posts = get_posts($args);
 
     if (empty($posts)) {
-        return new WP_Error('no_posts', 'No cards found', array('status' => 404));
+        return new WP_Error('no_posts', 'No carrousel found', array('status' => 404));
     }
 
     // Preparar os dados para a resposta
@@ -34,11 +34,11 @@ function get_all_cards(WP_REST_Request $request) {
 }
 
 // Função para registrar o endpoint
-function registrar_get_all_cards() {
-    register_rest_route('api', '/cards', array(
+function registrar_get_all_carrousel() {
+    register_rest_route('api', '/carrousel', array(
         'methods' => 'GET',
-        'callback' => 'get_all_cards',
+        'callback' => 'get_all_carrousel',
     ));
 }
-add_action('rest_api_init', 'registrar_get_all_cards');
+add_action('rest_api_init', 'registrar_get_all_carrousel');
 ?>
