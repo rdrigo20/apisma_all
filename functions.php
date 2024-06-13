@@ -11,6 +11,7 @@ require_once($template_diretorio . "/custom-post-type/carrousel.php");
 require_once($template_diretorio . "/endpoints/cards_create.php");
 require_once($template_diretorio . "/endpoints/cards_get.php");
 require_once($template_diretorio . "/endpoints/cards_get_all.php");
+require_once($template_diretorio . "/endpoints/cards_delete.php");
 
 require_once($template_diretorio . "/endpoints/events_create.php");
 require_once($template_diretorio . "/endpoints/events_get.php");
