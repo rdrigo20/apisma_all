@@ -9,6 +9,7 @@ function cards_create($request) {
   $descricao = sanitize_text_field($request['descricao']);
   $titulo = sanitize_text_field($request['titulo']);
   $link = $request['link'];
+  $imagem = esc_url_raw($request['imagem']); // Novo campo para a imagem
   //$descricao = sanitize_text_field($request['descricao']);
 
 
@@ -20,6 +21,7 @@ function cards_create($request) {
     'meta_input' => array(
       'descricao' => $descricao,
       'link' => $link,
+      'imagem' => $imagem,
     ),
   );
 

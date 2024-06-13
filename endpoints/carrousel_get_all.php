@@ -24,8 +24,10 @@ function get_all_cards(WP_REST_Request $request) {
             'date' => $post->post_date,
             'slug' => $post->post_name,
             'meta' => array(
-                'descricao' => get_post_meta($post->ID, 'descricao', true),
-                'link' => get_post_meta($post->ID, 'link', true),
+                'texto' => get_post_meta($post->ID, 'texto', true),
+                'endereco' => get_post_meta($post->ID, 'endereco', true),
+                'nome' => get_post_meta($post->ID, 'nome', true),
+                'imagem' => get_post_meta($post->ID, 'imagem', true),
             ),
         );
         $data[] = $post_data;

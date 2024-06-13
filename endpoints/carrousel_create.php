@@ -8,6 +8,7 @@ function carrousel_create($request) {
     $endereco = sanitize_text_field($request['endereco']);
     $texto = sanitize_text_field($request['texto']);
     $nome = sanitize_text_field($request['nome']);
+    $imagem = esc_url_raw($request['imagem']); // Novo campo para a imagem
     //$link = $request['link'];
     //$descricao = sanitize_text_field($request['descricao']);
 
@@ -21,6 +22,7 @@ function carrousel_create($request) {
       'texto' => $texto,
       'endereco' => $endereco,
       'nome' => $nome,
+      'imagem' => $imagem,
     ),
   );
 
