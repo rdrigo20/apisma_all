@@ -1,12 +1,12 @@
 <?php
 // Função de callback para deletar um card por slug
-function delete_card_by_slug(WP_REST_Request $request) {
+function delete_carrousel_by_slug(WP_REST_Request $request) {
     $slug = $request['slug']; // Obter o slug da requisição
 
     // Argumentos para buscar o card por slug
     $args = array(
         'name' => $slug,
-        'post_type' => 'cards',
+        'post_type' => 'carrousel',
         'post_status' => 'publish',
         'numberposts' => 1, // Obter apenas um post
     );
@@ -14,7 +14,7 @@ function delete_card_by_slug(WP_REST_Request $request) {
     $posts = get_posts($args);
 
     if (empty($posts)) {
-        return new WP_Error('no_post', 'Card not found', array('status' => 404));
+        return new WP_Error('no_post', 'carrousel not found', array('status' => 404));
     }
 
     $post = $posts[0]; // Obter o primeiro (e único) post encontrado
@@ -27,15 +27,15 @@ function delete_card_by_slug(WP_REST_Request $request) {
     // Deletar o post
     wp_delete_post($post->ID, true);
 
-    return new WP_REST_Response(array('message' => 'Card deletado'), 200);
+    return new WP_REST_Response(array('message' => 'carrousel deletado'), 200);
 }
 
 // Função para registrar o endpoint
-function registrar_delete_card_by_slug() {
-    register_rest_route('api', '/cards/(?P<slug>[a-zA-Z0-9-]+)', array(
+function registrar_delete_carrousel_by_slug() {
+    register_rest_route('api', '/carrousel/(?P<slug>[a-zA-Z0-9-]+)', array(
         'methods' => 'DELETE',
-        'callback' => 'delete_card_by_slug',
+        'callback' => 'delete_carrousel_by_slug',
     ));
 }
-add_action('rest_api_init', 'registrar_delete_card_by_slug');
+add_action('rest_api_init', 'registrar_delete_carrousel_by_slug');
 ?>
