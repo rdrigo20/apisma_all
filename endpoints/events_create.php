@@ -20,6 +20,7 @@ function events_create($request) {
     'meta_input' => array(
       'descricao' => $descricao,
       'link' => $link,
+      'data' => $data,
     ),
   );
 

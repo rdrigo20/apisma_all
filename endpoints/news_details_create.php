@@ -19,7 +19,6 @@ function news_details_create($request) {
     'post_status' => 'publish',
     'meta_input' => array(
       'data' => $data,
-      'titulo' => $titulo,
       'subtitulo' => $subtitulo,
       'autor' => $autor,
       'texto' => $texto,
