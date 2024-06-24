@@ -5,7 +5,7 @@ function news_details_create($request) {
   $user = wp_get_current_user();
   $user_id = $user->ID;
   
-  $data = sanitize_text_field($request['data']);
+  $data_news = sanitize_text_field($request['data_news']);
   $titulo = sanitize_text_field($request['titulo']);
   $subtitulo = sanitize_text_field($request['subtitulo']);
   $autor = sanitize_text_field($request['autor']);
@@ -18,7 +18,7 @@ function news_details_create($request) {
     'post_title' => $titulo,
     'post_status' => 'publish',
     'meta_input' => array(
-      'data' => $data,
+      'data_news' => $data_news,
       'subtitulo' => $subtitulo,
       'autor' => $autor,
       'texto' => $texto,

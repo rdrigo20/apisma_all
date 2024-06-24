@@ -31,6 +31,7 @@ function get_card_by_slug(WP_REST_Request $request) {
         'meta' => array(
             'descricao' => get_post_meta($post->ID, 'descricao', true),
             'link' => get_post_meta($post->ID, 'link', true),
+            'imagem' => get_post_meta($post->ID, 'imagem', true),
         ),
     );
 
