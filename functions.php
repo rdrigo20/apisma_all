@@ -30,6 +30,8 @@ require_once($template_diretorio . "/endpoints/news_details_create.php");
 require_once($template_diretorio . "/endpoints/news_details_delete.php");
 require_once($template_diretorio . "/endpoints/news_details_update.php");
 
+require_once($template_diretorio . "/endpoints/news_get_all.php");
+
 require_once($template_diretorio . "/endpoints/usuario_post.php");
 require_once($template_diretorio . "/endpoints/usuario_get.php");
 
